@@ -91,6 +91,4 @@ function Split-Csv
     Write-Host "Estimated:" ([math]::Round(($totalLines / $sw.Elapsed.TotalSeconds), 2)) "lines/second"
 }
 
-#$file = "Z:\dti\vale_notebooks_public\notebook_input_data_files\arcadis\Arcadis_ValeECOS_SE_HIST2021_12_21.csv"
-#$maxLines = 2500
 Split-Csv -file $file -maxLines $maxLines
