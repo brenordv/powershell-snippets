@@ -46,7 +46,7 @@ function Split-Csv
         https://raccoon.nina
 
         .LINK
-        todo: add link to github repo
+        https://github.com/brenordv/powershell-snippets/blob/master/split-csv-with-header/split-csv.ps1
      #>
     $sw = [system.diagnostics.stopwatch]::StartNew()
     Write-Host "Split starting for:" $file
