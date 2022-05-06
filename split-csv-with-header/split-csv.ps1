@@ -69,12 +69,13 @@ function Split-Csv
             continue;
         }
 
-        if ($lines.Count -ne $actualMaxLines) {
-            $lines.Add($line)
-            continue
+        if ($lines.Count -eq $actualMaxLines) {
+            $filesExported = Save-SplitCsv -lines $lines -fileLocation $fileLocation -baseFilename $baseFilename -filesExported $filesExported -header $header
+            $lines.Clear()
         }
-        $filesExported = Save-SplitCsv -lines $lines -fileLocation $fileLocation -baseFilename $baseFilename -filesExported $filesExported -header $header
-        $lines.Clear()
+
+        $lines.Add($line)
+        continue
     }
 
     if ($lines.Count -gt 0) {
